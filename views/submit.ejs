@@ -1,0 +1,56 @@
+<%- include('partials/header') %>
+
+<div class="container">
+  <div class="jumbotron centered">
+    <i class="fas fa-key fa-6x"></i>
+    <h1 class="display-3">Secrets</h1>
+    <p class="secret-text">Don't keep your secrets, share them anonymously!</p>
+
+    <form action="/submit" method="POST">
+
+      <div class="form-group">
+        <input type="text" class="form-control text-center" name="secret" placeholder="What's your secret?" id="secretInput">
+      </div>
+      <br>
+      <button type="submit" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#warningDBModal">Submit</button>
+    </form>
+
+
+  </div>
+</div>
+<%- include('partials/footer') %>
+
+
+<!-- Modal -->
+  <div class="modal fade" id="warningDBModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header alert alert-warning">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Warning!</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          To maintain a database free of disrespectful phrases, automatically entered data is replaced with a randomly generated phrase.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    let modalShowed = false;
+    const modal = new bootstrap.Modal('#warningDBModal', {
+      keyboard: false
+    })
+    const input = document.getElementById('secretInput');
+    input.addEventListener('focus', () => {
+      if (!modalShowed){
+        modal.show();
+        modalShowed=true;
+      }
+    })
+  </script>
+<!------------>
