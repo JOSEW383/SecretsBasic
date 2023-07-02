@@ -1,8 +1,8 @@
-# secretsBasic
+# SecretsBasic
 
 Web app that enables users to log in securely and publish secrets. The main functionality of the app is is provide an example for authentication through OAuth and password encryption.
 
-![](https://github.com/JOSEW383/secretsbasic/blob/master/public/SecretsBasicdemo.gif)
+![](https://github.com/JOSEW383/secretsbasic/blob/master/public/SecretsBasicDemo.gif)
 
 ## Installation
 
